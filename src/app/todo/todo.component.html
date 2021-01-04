@@ -12,7 +12,7 @@
             </div>
 
             <div class="uk-float-right">
-                <button class="uk-margin-small-right" uk-toggle="target: #modal-example"
+                <button class="uk-margin-small-right" uk-toggle="target: #modal-example-todo"
                     (click)="updateItem(contact, $event)">
                     <span uk-icon="pencil"></span>
                 </button>
@@ -24,7 +24,7 @@
     </li>
 </ul>
 
-<div id="modal-example" #contactModal uk-modal>
+<div id="modal-example-todo" #contactModal uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
         <h2 class="uk-modal-title">Update Your Todo</h2>
         <div *ngIf="todoToBeUpdate">
