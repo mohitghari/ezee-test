@@ -1,0 +1,37 @@
+<div id="myDIV" class="header">
+    <input #item type="text" placeholder="Title..." class="addItemDiv">
+
+    <span (click)="additems(item.value);item.value=''" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+    <li *ngFor="let contact of contacts" [class.active]="contact.completed == true" (click)="select(contact)">
+        <div class="uk-clearfix">
+            <div class="uk-float-left">
+                {{contact.name | uppercase }}
+            </div>
+
+            <div class="uk-float-right">
+                <button class="uk-margin-small-right" uk-toggle="target: #modal-example"
+                    (click)="updateItem(contact, $event)">
+                    <span uk-icon="pencil"></span>
+                </button>
+                <button (click)="deleteItem(contact,$event)">
+                    <span uk-icon="trash"></span>
+                </button>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<div id="modal-example" #contactModal uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Update Your Todo</h2>
+        <div *ngIf="todoToBeUpdate">
+            <input #itemUpdate type="text" class="uk-input" [value]="todoToBeUpdate.name" placeholder="Enter Name.">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary uk-margin-left" (click)="saveUpdatedItem(itemUpdate.value)"
+                type="button">Save</button>
+        </div>
+    </div>
+</div>

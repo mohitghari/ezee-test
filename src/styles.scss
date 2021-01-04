@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+$global-link-color: rgb(219, 211, 200);
+$global-margin:5px;
+$font-size-body-px: 50;
+
+@import "../node_modules/uikit/src/scss/variables.scss";
+@import "../node_modules/uikit/src/scss/mixins-theme.scss";
+@import "../node_modules/uikit/src/scss/uikit-theme.scss";
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: red;
+$size : 30px;
+
+body{
+    h5 {
+        .link{
+        font: 100% $font-stack;
+        color: $primary-color;
+        font-size:$size;
+        }
+    }
+}
